@@ -62,3 +62,6 @@ logs/
 # ChromaDB
 kb/
 chroma/
+# Environment files with secrets
+backend/.env
+frontend/.env
