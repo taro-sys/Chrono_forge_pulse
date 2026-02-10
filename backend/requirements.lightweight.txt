@@ -1,0 +1,34 @@
+# ChronoForge Pulse Backend - Lightweight Dependencies (Production)
+# This version removes heavy ML libraries for deployment within 1GB memory limit
+
+# Core Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Database (Optional - not actively used)
+motor>=3.3.2
+pymongo>=4.6.1
+
+# Lightweight ML & Forecasting (Keep these)
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+lightgbm>=4.1.0
+statsmodels>=0.14.0
+
+# LLM Providers (Lightweight)
+anthropic>=0.18.0
+openai>=1.0.0
+
+# Utilities
+tqdm>=4.65.0
+
+# REMOVED FOR DEPLOYMENT (Too heavy):
+# tensorflow>=2.15.0              # 500MB+ - removed
+# prophet>=1.1.5                  # 200MB+ - removed
+# sentence-transformers>=2.2.0    # 300MB+ - removed
+# chromadb>=0.4.0                 # 100MB+ - removed
