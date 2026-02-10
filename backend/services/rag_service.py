@@ -8,12 +8,21 @@ from datetime import datetime
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# Import LLMService
+from services.llm_service import LLMService
+
+# Try to import RAG components (optional)
+RAGQuery = None
+RAGConfig = None
+LLMConfig = None
+RAGPipelineBuilder = None
+
 try:
     from chronoforge_rag import RAGQuery, RAGConfig, LLMConfig
     from rag_pipeline import RAGPipelineBuilder
-    from services.llm_service import LLMService
 except ImportError as e:
     print(f"Warning: RAG imports failed: {e}")
+    print("RAG features will be limited. Build knowledge base to enable full RAG.")
 
 
 class RAGService:
