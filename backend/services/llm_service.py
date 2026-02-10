@@ -168,6 +168,11 @@ class LLMService:
         
         if selected_llm == "ollama":
             result = self.generate_with_ollama(prompt, system_prompt)
+            # Fallback to Claude if Ollama fails (e.g., memory issues)
+            if not result.get("success") and self.claude_client:
+                print(f"⚠ Ollama failed ({result.get('error')}), falling back to Claude")
+                result = self.generate_with_claude(prompt, system_prompt)
+                result["selected_llm"] = "claude (fallback)"
         elif selected_llm == "claude":
             result = self.generate_with_claude(prompt, system_prompt)
         else:
@@ -177,7 +182,8 @@ class LLMService:
                 "text": "LLM service unavailable. Please configure Ollama or Claude."
             }
         
-        result["selected_llm"] = selected_llm
+        if "selected_llm" not in result:
+            result["selected_llm"] = selected_llm
         return result
     
     def explain_forecast(self, forecast_data: Dict[str, Any], use_claude: bool = False) -> str:
