@@ -27,14 +27,15 @@ async def lifespan(app: FastAPI):
     print("🚀 ChronoForge Pulse Backend Starting...")
     print("=" * 60)
     
-    # Check environment variables
-    mongo_url = os.getenv("MONGO_URL", "Not configured")
-    ollama_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+    # Check environment variables (all optional)
+    mongo_url = os.getenv("MONGO_URL", "Not configured (using in-memory storage)")
+    ollama_url = os.getenv("OLLAMA_BASE_URL", "Not configured")
     has_claude = bool(os.getenv("ANTHROPIC_API_KEY"))
     
     print(f"📊 MongoDB: {mongo_url}")
     print(f"🤖 Ollama: {ollama_url}")
     print(f"🧠 Claude: {'✓ Configured' if has_claude else '✗ Not configured'}")
+    print(f"💾 Storage: In-memory (MongoDB optional)")
     print("=" * 60)
     
     yield
