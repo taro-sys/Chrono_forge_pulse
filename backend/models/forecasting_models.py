@@ -130,6 +130,9 @@ class ForecastingModels:
     
     def train_sarima(self, data: np.ndarray) -> Optional[any]:
         """Train SARIMA model"""
+        if not STATSMODELS_AVAILABLE:
+            print("SARIMA training skipped: statsmodels not available")
+            return None
         try:
             model = SARIMAX(data, order=(1, 1, 1), seasonal_order=(0, 0, 0, 0))
             fitted = model.fit(disp=False)
@@ -140,10 +143,10 @@ class ForecastingModels:
     
     def train_lstm(self, data: np.ndarray, window_size: int = 5) -> Tuple[Optional[any], Optional[any]]:
         """Train LSTM model"""
+        if not TENSORFLOW_AVAILABLE or not SKLEARN_AVAILABLE:
+            print("LSTM training skipped: TensorFlow or sklearn not available")
+            return None, None
         try:
-            from tensorflow.keras.models import Sequential
-            from tensorflow.keras.layers import LSTM, Dense
-            
             if len(data) <= window_size:
                 return None, None
             
@@ -170,6 +173,9 @@ class ForecastingModels:
     
     def train_xgboost(self, data: np.ndarray, window_size: int = 5) -> Optional[any]:
         """Train XGBoost model"""
+        if not XGBOOST_AVAILABLE:
+            print("XGBoost training skipped: xgboost not available")
+            return None
         try:
             if len(data) <= window_size:
                 return None
@@ -186,6 +192,9 @@ class ForecastingModels:
     
     def train_lightgbm(self, data: np.ndarray, window_size: int = 5) -> Optional[any]:
         """Train LightGBM model"""
+        if not LIGHTGBM_AVAILABLE:
+            print("LightGBM training skipped: lightgbm not available")
+            return None
         try:
             if len(data) <= window_size:
                 return None
@@ -203,6 +212,9 @@ class ForecastingModels:
     
     def train_prophet(self, data: np.ndarray, dates: Optional[List[str]] = None) -> Optional[any]:
         """Train Prophet model"""
+        if not PROPHET_AVAILABLE:
+            print("Prophet training skipped: prophet not available")
+            return None
         try:
             # Create dataframe for Prophet
             if dates is None:
