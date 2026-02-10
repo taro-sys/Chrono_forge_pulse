@@ -132,7 +132,7 @@ class LLMService:
                 }
             
             response = self.claude_client.messages.create(
-                model="claude-3-5-sonnet-20241022",
+                model="claude-3-5-sonnet-20240620",
                 max_tokens=1024,
                 temperature=0.7,
                 system=system_prompt,
