@@ -105,6 +105,12 @@ class LLMService:
             
             if response.status_code == 200:
                 result = response.json()
+                # Check for errors in response
+                if "error" in result:
+                    return {
+                        "success": False,
+                        "error": f"Ollama error: {result['error']}"
+                    }
                 return {
                     "success": True,
                     "text": result.get("response", ""),
