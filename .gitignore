@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+*.log
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp
+.pnp.js
+
+# React
+build/
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+/tmp/
+/var/log/
+
+# Models (too large)
+*.pkl
+*.h5
+*.keras
+*.json
+*.txt
+!requirements.txt
+!requirements.lightweight.txt
+!package.json
+
+# Database
+*.db
+*.sqlite
+
+# ChromaDB
+kb/
+chroma/
