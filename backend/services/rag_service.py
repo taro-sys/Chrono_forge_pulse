@@ -37,6 +37,10 @@ class RAGService:
     def _initialize_pipeline(self):
         """Initialize RAG pipeline if knowledge base exists"""
         try:
+            if not RAGPipelineBuilder:
+                print(f"⚠ RAG modules not available. Install dependencies and build knowledge base.")
+                return
+                
             if os.path.exists(self.kb_path):
                 # Build pipeline with mock LLM (we'll use our LLM service instead)
                 builder = RAGPipelineBuilder()
