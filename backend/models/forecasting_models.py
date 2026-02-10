@@ -10,15 +10,50 @@ from dataclasses import dataclass
 # Add parent directory to path to import existing modules
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# Import ML libraries with graceful fallback
+TENSORFLOW_AVAILABLE = False
+PROPHET_AVAILABLE = False
+XGBOOST_AVAILABLE = False
+LIGHTGBM_AVAILABLE = False
+STATSMODELS_AVAILABLE = False
+SKLEARN_AVAILABLE = False
+
 try:
-    from tensorflow.keras.models import load_model
-    from xgboost import XGBRegressor
-    import lightgbm as lgb
-    from statsmodels.tsa.statespace.sarimax import SARIMAX
+    from tensorflow.keras.models import load_model, Sequential
+    from tensorflow.keras.layers import LSTM, Dense
+    TENSORFLOW_AVAILABLE = True
+except ImportError:
+    print("⚠️  TensorFlow not available - LSTM model disabled")
+
+try:
     from prophet import Prophet
+    PROPHET_AVAILABLE = True
+except ImportError:
+    print("⚠️  Prophet not available - Prophet model disabled")
+
+try:
+    from xgboost import XGBRegressor
+    XGBOOST_AVAILABLE = True
+except ImportError:
+    print("⚠️  XGBoost not available - XGBoost model disabled")
+
+try:
+    import lightgbm as lgb
+    LIGHTGBM_AVAILABLE = True
+except ImportError:
+    print("⚠️  LightGBM not available - LightGBM model disabled")
+
+try:
+    from statsmodels.tsa.statespace.sarimax import SARIMAX
+    STATSMODELS_AVAILABLE = True
+except ImportError:
+    print("⚠️  statsmodels not available - ARIMA model disabled")
+
+try:
     from sklearn.preprocessing import MinMaxScaler
-except ImportError as e:
-    print(f"Warning: Some ML libraries not available: {e}")
+    SKLEARN_AVAILABLE = True
+except ImportError:
+    print("⚠️  scikit-learn not available - some features disabled")
 
 
 @dataclass
