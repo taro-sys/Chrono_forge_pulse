@@ -1,0 +1,24 @@
+# ChronoForge RAG Python - Dependencies
+
+# Core
+python-dotenv>=1.0.0
+
+# Embeddings (choose one or more)
+sentence-transformers>=2.2.0  # Local embeddings (recommended)
+# openai>=1.0.0                # OpenAI embeddings API
+# google-generativeai>=0.3.0   # Gemini embeddings API
+
+# Vector Store
+chromadb>=0.4.0               # Persistent vector store
+
+# LLM Providers (install based on preference)
+google-generativeai>=0.3.0    # Gemini (recommended - free tier available)
+openai>=1.0.0                 # OpenAI GPT-4
+anthropic>=0.18.0             # Anthropic Claude
+
+# Utilities
+numpy>=1.24.0
+tqdm>=4.65.0                  # Progress bars
+
+# Optional: Better token counting for OpenAI
+tiktoken>=0.5.0

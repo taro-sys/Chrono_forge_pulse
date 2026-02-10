@@ -1,0 +1,42 @@
+date,sales_value,region,category,promotion,competitor_action,weather_condition,seasonality,epidemic_flag,description
+2024-01-15,15234.50,North,Electronics,1,0,Clear,Winter,0,Strong post-holiday sales driven by clearance promotions
+2024-01-22,12450.75,North,Electronics,0,1,Snow,Winter,0,Competitor launched aggressive pricing campaign
+2024-02-01,18500.00,South,Apparel,1,0,Mild,Winter,0,Valentine's promotion driving accessory sales
+2024-02-14,22100.25,South,Apparel,1,0,Clear,Winter,0,Peak Valentine's Day performance
+2024-02-28,9800.00,West,Home,0,0,Rain,Winter,0,Slow period post-Valentine's
+2024-03-10,14200.00,North,Electronics,0,0,Clear,Spring,0,New product launches gaining traction
+2024-03-21,16750.50,East,Electronics,1,0,Mild,Spring,0,Spring sale event successful
+2024-04-01,11500.00,South,Home,0,1,Clear,Spring,0,Competitor Easter promotion impacted sales
+2024-04-15,19800.00,West,Apparel,1,0,Warm,Spring,0,Spring fashion collection launch
+2024-05-01,21500.75,North,Electronics,0,0,Warm,Spring,0,Strong organic demand pre-summer
+2024-05-15,24300.00,East,Apparel,1,0,Clear,Spring,0,Memorial Day early promotions
+2024-05-27,28500.50,East,Apparel,1,0,Clear,Summer,0,Memorial Day weekend peak
+2024-06-10,17200.00,South,Home,0,0,Hot,Summer,0,Summer slowdown in home category
+2024-06-21,15800.00,West,Electronics,0,1,Hot,Summer,0,Amazon Prime Day competition
+2024-07-04,31200.00,North,Apparel,1,0,Hot,Summer,0,Independence Day sale record
+2024-07-15,19500.00,South,Electronics,0,0,Hot,Summer,0,Back-to-school early shopping
+2024-08-01,26800.50,East,Electronics,1,0,Hot,Summer,0,Back-to-school peak period
+2024-08-15,29100.00,North,Electronics,1,0,Warm,Summer,0,School supplies and electronics bundle
+2024-09-01,18400.00,West,Home,0,0,Mild,Fall,0,Post-summer normalization
+2024-09-15,22600.75,South,Apparel,1,0,Mild,Fall,0,Fall fashion launch successful
+2024-10-01,20100.00,East,Home,0,0,Cool,Fall,0,Home improvement season starting
+2024-10-15,35400.00,North,Electronics,1,1,Cool,Fall,0,Early Black Friday teasers beating competition
+2024-10-31,28900.50,West,Apparel,1,0,Cool,Fall,0,Halloween costume sales strong
+2024-11-15,42500.00,South,Electronics,1,0,Cold,Fall,0,Pre-Black Friday deals performing well
+2024-11-29,68500.75,North,Electronics,1,1,Cold,Winter,0,Black Friday record despite competition
+2024-12-01,45200.00,East,Apparel,1,0,Cold,Winter,0,Cyber Monday extended deals
+2024-12-15,52300.50,West,Electronics,1,0,Snow,Winter,0,Holiday shopping peak week
+2024-12-24,38700.00,South,Home,1,0,Cold,Winter,0,Last-minute gift shopping
+2024-12-31,15600.00,North,Apparel,0,0,Snow,Winter,0,Post-Christmas clearance begins
+2023-01-10,13500.00,North,Electronics,1,0,Snow,Winter,0,New Year clearance event
+2023-02-12,19200.50,South,Apparel,1,0,Clear,Winter,0,Valentine's accessories strong
+2023-03-17,16800.00,East,Home,1,0,Mild,Spring,0,St. Patrick's Day themed promotions
+2023-04-09,12100.00,West,Electronics,0,1,Clear,Spring,0,Easter competitor pressure
+2023-05-28,27800.75,North,Apparel,1,0,Warm,Spring,0,Memorial Day success
+2023-06-15,14500.00,South,Home,0,0,Hot,Summer,0,Summer furniture slowdown
+2023-07-04,29500.00,East,Apparel,1,0,Hot,Summer,0,Independence Day performance
+2023-08-20,25600.50,West,Electronics,1,0,Hot,Summer,0,Back-to-school electronics
+2023-09-04,17800.00,North,Home,0,0,Mild,Fall,0,Labor Day modest performance
+2023-10-31,26400.00,South,Apparel,1,0,Cool,Fall,0,Halloween costume sales
+2023-11-24,61200.75,East,Electronics,1,1,Cold,Fall,0,Black Friday despite heavy competition
+2023-12-20,48900.00,West,Electronics,1,0,Snow,Winter,0,Holiday electronics peak
