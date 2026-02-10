@@ -10,8 +10,8 @@ import os
 from dotenv import load_dotenv
 import uvicorn
 
-# Load environment variables
-load_dotenv()
+# Load environment variables (don't override Kubernetes env vars)
+load_dotenv(override=False)
 
 # Import routes
 from routes.forecast_routes import router as forecast_router
