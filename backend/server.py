@@ -51,8 +51,9 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS configuration
-cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173").split(",")
+# CORS configuration - allow production domain
+cors_origins_env = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173,*")
+cors_origins = cors_origins_env.split(",") if cors_origins_env != "*" else ["*"]
 
 app.add_middleware(
     CORSMiddleware,
