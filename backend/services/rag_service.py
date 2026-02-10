@@ -57,10 +57,21 @@ class RAGService:
               category_filter: str = None) -> Dict[str, Any]:
         """Query the knowledge base with RAG"""
         try:
-            if not self.pipeline:
+            if not self.pipeline or not RAGQuery:
+                # Fallback: use LLM directly without RAG
+                prompt = f"Answer this question about sales forecasting: {question}"
+                system_prompt = "You are a sales forecasting analyst."
+                result = self.llm_service.generate(prompt, "simple_query", system_prompt, use_claude)
+                
                 return {
-                    "success": False,
-                    "error": "RAG pipeline not initialized. Build knowledge base first."
+                    "success": True,
+                    "query_id": str(uuid.uuid4()),
+                    "question": question,
+                    "answer": result["text"] if result["success"] else "RAG not available. Build knowledge base to enable full RAG features.",
+                    "sources": [],
+                    "llm_used": result.get("model", "none"),
+                    "created_at": datetime.utcnow().isoformat(),
+                    "note": "RAG pipeline not initialized"
                 }
             
             # Create RAG query
