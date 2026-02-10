@@ -31,4 +31,3 @@ chromadb>=0.4.0
 
 # Utilities
 tqdm>=4.65.0
-pickle5>=0.0.12
